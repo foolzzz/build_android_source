@@ -3,8 +3,11 @@
 FROM ubuntu:16.04
 
 RUN apt update -y \
+    && apt install -y software-properties-common
+
+RUN apt update -y \
     && apt install vim git -y \
-    && add-apt-repository ppa:openjdk-r/ppa  \
+    && add-apt-repository -y ppa:openjdk-r/ppa  \
     && apt update -y \
     && apt install -y openjdk-7-jdk \
     && apt install -y openjdk-8-jdk \
